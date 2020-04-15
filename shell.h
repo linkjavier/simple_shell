@@ -11,28 +11,34 @@
 #include <signal.h>
 #include <stdlib.h>
 
-/*Signal fucntion*/
-void handle_signal(int sig);
-/*EOF function*/
-void eof_func(char c);
-
+/**
+  * struct directories - its used to find the PATH.
+  * @dir: directories
+  * @next: Pointer to next structure
+  *
+  * Description: directories structure
+  * for shell project.
+  */
 typedef struct directories
 {
-	char *direct;
+	char *dir;
 	struct directories *next;
-} directs;
+} dir_st;
 
-char *_which(directs **head, char *dir);
+/*EOF function*/
+void eof_func(char c);
+char *_which(dir_st **head, char *input);
 char *_getenv(const char *name);
-void add_dir_to_struct(struct directories **head, char *directories);
-struct directories *add_node_end(struct directories **head, const char *str);
-char **put_args(char **av, char *str);
-char *_strcat(char *fstr, char *sstr);
+void add_dir_to_sll(struct directories **head, char *directories);
+struct directories *create_sll(struct directories **head, const char *str);
+char **put_args(char **arr, char *str);
 char **flags(char **args);
-int _strlen(char *str);
 int count_args(char **arr);
 char **sep_by_space(char *str);
 char **get_params(char **args);
 int exec_func(char *input);
+int _strlen(char *str);
+char *_strcat(char *first, char *second);
+char *_strdup(const char *str);
 
 #endif
