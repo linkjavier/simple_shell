@@ -1,4 +1,4 @@
-# SIMPLE SHELL PROJECT IMPLEMENTATION IN C LANGUAGE
+# SIMPLE SHELL PROJECT IMPLEMENTATION IN C LANGUAGE.
 ---
 This project is about to run a shell base our printf function, which belongs to a standard C language library. Its main function is to send a standard output according to the format, fomatting the past arguments and turning them into the arguments os a charracter string. For this project, the main function will be used as _printf to diffrentiate it from the original printf.
 ```
