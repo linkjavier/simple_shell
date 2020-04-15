@@ -34,7 +34,7 @@ int exec_func(char *input)
 			sort_tokens[i] = malloc(_strlen(flag[j]));
 			sort_tokens[i] = flag[j];
 		}
-		for (j = 0; no_flag[j] != NULL, j++, i++)
+		for (j = 0; no_flag[j] != NULL; j++, i++)
 		{
 			sort_tokens[i] = malloc(_strlen(no_flag[j]));
 			sort_tokens[i] = no_flag[j];
