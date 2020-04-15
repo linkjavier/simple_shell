@@ -4,7 +4,7 @@
   * @input: Address to a string inputted by user
   * Return: Return (0)
  **/
-/*int exec_func(char *input)
+int exec_func(char *input)
 {
 	char **sort_tokens, **flag, **no_flag, **all_tokens;
 	int found, count = 0, i = 0, j = 0;
@@ -45,4 +45,4 @@
 		sort_tokens[1] = NULL;
 	execve(sort_tokens[0], sort_tokens, NULL);
 	return (0);
-}*/
+}
