@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int main()
+/*int simple_shell()
 {
 	struct stat st;
 	ssize_t rgl;
@@ -46,4 +46,4 @@ int main()
 	} while (rgl != -1);
 
 	return (0);
-}
+}*/
