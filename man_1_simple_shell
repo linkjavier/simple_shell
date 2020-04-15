@@ -1,0 +1,71 @@
+.TH man 3 "14 April 2020" "simple_shell man page"
+.SH NAME
+.B simple_shell
+- formatted output conversion
+.SH SYNOPSIS
+.B #include "shell.h"
+.B int _printf(const char *format, ...);(simple_shell)
+.SH DESCRIPTION
+The function simple_shell() produce output accord
+.SH FORMAT
+.TP
+%i
+ integer number
+.TP
+%d
+ integer number, the same as %i
+.TP
+%c
+ character
+.TP
+%s
+ string - prints (null) on null string
+.TP
+%r
+ reverse string
+.TP
+%R
+ rot13'ed string
+.SH Return value
+Returns the number of characters printed.......
+.SH Example
+.PP
+.RS
+.BR " #include ''shell.h'' "
+.br
+.BR " int main(void)"
+.br
+.BR " {"
+.br
+.BR " 	int age = 25;"
+.br
+.BR "	char letter = 'J';"
+.br
+.BR "	char *p = "OSCAR";"
+.br
+.BR "	_printf("Hello World"); "
+.br
+.BR "	_printf("My name beging with %c", letter); "
+.br
+.BR "	_printf("Your name is %s", p); "
+.br
+.BR "	_printf("I am %d years old", age); "
+.br
+.BR "	_printf("you are %i years", age); "
+.br
+.BR "   _printf("%R", p); "
+.br
+.BR "   _printf("%r", p); "
+.br
+.BR " }"
+.br
+.PP
+.SH Format of the format string
+.SH OPTIONS
+.B Not yet.
+.SH SEE ALSO
+.I printf(3). putchar().
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Bryan Ortiz, Javier Charria
