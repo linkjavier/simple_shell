@@ -7,7 +7,7 @@
 int exec_func(char *input)
 {
 	char **sort_tokens, **flag, **no_flag, **all_tokens;
-	int found, count = 0, i = 0, j = 0;
+	int found, count = 1, i = 0, j = 0;
 	struct stat st;
 
 	all_tokens = sep_by_space(input);
@@ -18,25 +18,25 @@ int exec_func(char *input)
 		count += count_args(flag);
 		count += count_args(no_flag);
 	}
-	sort_tokens = malloc(sizeof(char *) * count);
+	sort_tokens = malloc(sizeof(char *) * (count + 1));
 	found = stat(all_tokens[0], &st);
 	if (found != 0)
 	{
 		perror("Error");
 		return (0);
 	}
-	sort_tokens[0] = malloc(_strlen(all_tokens[0]));
+	sort_tokens[0] = malloc(_strlen(all_tokens[0]) + 1);
 	sort_tokens[0] = all_tokens[0];
 	if (count_args(all_tokens) > 1 && flags(all_tokens))
 	{
 		for (i = 1, j = 0; flag[j] != NULL; i++, j++)
 		{
-			sort_tokens[i] = malloc(_strlen(flag[j]));
+			sort_tokens[i] = malloc(_strlen(flag[j]) + 1);
 			sort_tokens[i] = flag[j];
 		}
 		for (j = 0; no_flag[j] != NULL; j++, i++)
 		{
-			sort_tokens[i] = malloc(_strlen(no_flag[j]));
+			sort_tokens[i] = malloc(_strlen(no_flag[j]) + 1);
 			sort_tokens[i] = no_flag[j];
 		}
 		sort_tokens[i] = NULL;

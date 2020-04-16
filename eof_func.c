@@ -6,6 +6,7 @@
 
 void eof_func(char c)
 {
-	write(1, &c, 2);
-}
+	int result;
 
+	result = write(1, &c, 2);
+}
