@@ -3,11 +3,12 @@
 int _strlen(char *str);
 
 /**
- * _strcat - concatenates two strings.
- * @first: first string.
- * @second: second string.
- * Return: A string that concatenates first and second.
+ * _strcat - Concatenates two strings.
+ * @first: Address to first string.
+ * @second: Address to second string.
+ * Return: A string @cat. It is the result of concatenates first and second.
  */
+
 char *_strcat(char *first, char *second)
 {
 	char *cat;
@@ -26,7 +27,7 @@ char *_strcat(char *first, char *second)
 }
 
 /**
- * _strlen - function that count how many elements are in a string
+ * _strlen - Function that counts how many elements are in a string
  * @str: String the it will count the elements
  * Return: the number of characters of a string
  */
