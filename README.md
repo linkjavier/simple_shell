@@ -1,8 +1,9 @@
 # SIMPLE SHELL PROJECT IMPLEMENTATION IN C LANGUAGE.
 
-<img src="https://i.ibb.co/FDSqykf/Simple-Shell.png" alt="Simple-Shell" border="0">
 
----
+<img src="https://i.ibb.co/FDSqykf/Simple-Shell.png" alt="Shell" border="0">
+
+
 This project is about to run a simple shell, which belongs to a standard C language library. Its main function is to send a standard output according to the format, fomatting the past arguments and turning them into the arguments os a charracter string. For this project, the main function will be used as _printf to diffrentiate it from the original printf.
 ```
 <img src="https://ibb.co/hmP14xn" alt="shell" border="0">
