@@ -27,16 +27,10 @@ typedef struct directories
 
 /*EOF function*/
 void eof_func(char c);
-char *_which(dir_st **head, char *input);
-char *_getenv(const char *name);
-void add_dir_to_sll(struct directories **head, char *directories);
-struct directories *create_sll(struct directories **head, const char *str);
+void eof_1(char *phrase);
 char **put_args(char **arr, char *str);
-char **flags(char **args);
-int count_args(char **arr);
 char **sep_by_space(char *str);
-char **get_params(char **args);
-int exec_func(char *input);
+char **exec_func(char **all_tokens);
 int _strlen(char *str);
 char *_strcat(char *first, char *second);
 char *_strdup(const char *str);

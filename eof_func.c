@@ -6,6 +6,7 @@
 
 void eof_func(char c)
 {
+	write(STDOUT_FILENO, &c, 2);
 
-	write(1, &c, 2);
 }
+

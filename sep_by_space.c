@@ -18,9 +18,13 @@ char **sep_by_space(char *str)
 		token = strtok(NULL, " ");/*separa desde la segunda palabra en adelante.*/
 		len++;/*cuenta el numero de palabras en str.*/
 	}
-	tokens = malloc(sizeof(char *) * (len + 1));
 
-	put_args(tokens, str);
+		tokens = malloc(sizeof(char *) * (len + 1));
+		if (tokens == NULL)
+			return (NULL);
+		put_args(tokens, str);
+
+	free(dup);
 
 	return (tokens);
 }
