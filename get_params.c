@@ -28,13 +28,13 @@ char **get_params(char **args)
 	{
 		if (*args[i] != '-')
 		{
-			params[wc] = malloc(sizeof(char) * _strlen(args[i]));
+			params[wc] = malloc(sizeof(char) * (_strlen(args[i]) + 1));
 			params[wc] = args[i];
 			wc++;
 		}
 		i++;
 	}
-
+	params[wc] = NULL;
 	return (params);/*Params es un array de strings que NO son flags*/
 }
 

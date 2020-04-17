@@ -1,51 +1,61 @@
 #include "shell.h"
-
 /**
-  * main - Main function to excute the mini Shell.
+  * main - Main function to execute the mini Shell.
   * Return: 0.
-  *
  **/
-
 int main(void)
 {
-	ssize_t n_chars;/*Return value of getline (number of chars)*/
-	size_t len = 0;
-	char *phrase; /*Saves whats entered by getline*/
-	pid_t f_pid;
+	ssize_t n_chars, f_pid;
+	size_t len = 0, i;
+	char *phrase;
+	char **all_tokens = NULL;
 
-	/*Divides between interactive and non-interactive mode*/
 	if (!isatty(0))
 	{
 		n_chars = getline(&phrase, &len, stdin);
 		strtok(phrase, "\n\t\r");
-		exec_func(phrase);
+		exec_func(all_tokens);
+		free(phrase);
+		for (i = 0; all_tokens != NULL; i++)
+			free(all_tokens[i]);
+		free(all_tokens);
 	}
 	else
 	{
 		do {
-			printf("#cisfun$ ");
+			write(STDOUT_FILENO, "$ ", 2);
 			n_chars = getline(&phrase, &len, stdin);
-			/*End of file, condition*/
-
 			if (n_chars == EOF)
 			{
-				eof_func('\n');
-				free(phrase);
-				exit(0);
+				eof_1(phrase);
 			}
 			f_pid = fork();
 			if (f_pid == 0)
 			{
 				strtok(phrase, "\n\t\r");
-				exec_func(phrase);
+				all_tokens = sep_by_space(phrase);
+				exec_func(all_tokens);
+				free(phrase);
+				for (i = 0; all_tokens != NULL; i++)
+					free(all_tokens[i]);
+				free(all_tokens);
 			}
 			else
-			{
 				wait(NULL);
-			}
-
 		} while (n_chars != -1);
 	}
-
 	return (0);
 }
+
+/**
+  * eof_1 - frees phrase
+  * @phrase: string.
+  * Return: void.
+  */
+void eof_1(char *phrase)
+{
+	eof_func('\n');
+	free(phrase);
+	exit(0);
+}
+

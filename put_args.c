@@ -8,20 +8,19 @@
 char **put_args(char **arr, char *str)
 {
 	int i = 0;
-	char *dup = _strdup(str);/*Alocates space in heap for copy of str*/
-	char *token = strtok(dup, " ");/*gets first string*/
+	/*char *dup = _strdup(str)*/
+	char *token = strtok(str, " ");/*gets first string*/
 
 	while (token != NULL)
 	{
 		/*Allocate space for each string*/
-		arr[i] = malloc(sizeof(char) * _strlen(token));
+		arr[i] = malloc(sizeof(char) * _strlen(token) + 1);
 		arr[i] = token;/*Allocates string by string until NULL*/
 		token = strtok(NULL, " ");/*Moves through strings*/
 		i++;
 	}
 
 	arr[i] = NULL;
-
 
 	return (arr);
 }
