@@ -14,6 +14,7 @@ int main(void)
 	{
 		n_chars = getline(&phrase, &len, stdin);
 		strtok(phrase, "\n\t\r");
+		all_tokens = sep_by_space(phrase);
 		exec_func(all_tokens);
 		free(phrase);
 		for (i = 0; all_tokens != NULL; i++)
@@ -26,9 +27,7 @@ int main(void)
 			write(STDOUT_FILENO, "$ ", 2);
 			n_chars = getline(&phrase, &len, stdin);
 			if (n_chars == EOF)
-			{
 				eof_1(phrase);
-			}
 			f_pid = fork();
 			if (f_pid == 0)
 			{
