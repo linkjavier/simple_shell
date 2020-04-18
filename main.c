@@ -3,11 +3,11 @@
   * main - Main function to execute the mini Shell.
   * Return: 0.
  **/
-int main(void)
+int main(int c __attribute__((unused)), char **av __attribute__((unused)))
 {
 	ssize_t n_chars, f_pid;
 	size_t len = 0, i;
-	char *phrase;
+	char *phrase = NULL;
 	char **all_tokens = NULL;
 
 	if (!isatty(0))
