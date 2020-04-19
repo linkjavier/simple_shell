@@ -57,7 +57,9 @@ drwx------ 3 root       root       4096 Apr 16 20:43 systemd-private-ff8e9742e82
 drwx------ 3 root       root       4096 Apr 16 20:43 systemd-private-ff8e9742e82f4dc4b606152975dca19c-systemd-resolved.service-I9gQzm
 drwx------ 3 root       root       4096 Apr 16 20:43 systemd-private-ff8e9742e82f4dc4b606152975dca19c-systemd-timesyncd.service-TnEXVm
 $
-...
+```
+Hola
+```
 
 ```
 ## Development environment 🛠️
