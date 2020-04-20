@@ -13,12 +13,11 @@ Firts you have to add the holberton library. "shell.h"
 
 This library contains all the prototypes functions that you will need to execute the simple_shell function
 
-###Prototype: int simple_shell(......)
-
 Then compile just like that:
-gcc -Wall Wextra -Werror -pedantic -Wno-format *.c shell.h -o namefileExecutable
-
-./"namefileExecutable"
+```
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
+## Testing
 ```
 user@Lenovo-ThinkPad-E470:~/Holberton/simple_shell$ ./hsh 
 $ /bin/ls -l /tmp
@@ -37,12 +36,6 @@ drwx------ 3 root       root       4096 Apr 16 20:43 systemd-private-ff8e9742e82
 drwx------ 3 root       root       4096 Apr 16 20:43 systemd-private-ff8e9742e82f4dc4b606152975dca19c-systemd-timesyncd.service-TnEXVm
 $
 ```
-
-# Handle command lines with arguments
-```
-Hola
-```
-
 
 ## Development environment 🛠️
 This project has been tested on Ubuntu 14.06.6 LTS
