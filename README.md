@@ -7,7 +7,7 @@ This project is about to run a simple shell, which belongs to a standard C langu
 user@Lenovo-ThinkPad-E470:~/Holberton/simple_shell$ ./hsh 
 $ 
 ```
-##How to use it 🔧
+## How to use it 🔧
 Firts you have to add the holberton library. "shell.h"
 
 This library contains all the prototypes functions that you will need to execute the simple_shell function
