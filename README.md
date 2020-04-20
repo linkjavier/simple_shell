@@ -2,11 +2,10 @@
 
 ![Simple_Shell](https://user-images.githubusercontent.com/54350108/79541720-f33f3900-804f-11ea-85f7-434f05be7b3e.png)
 
-This project is about to run a simple shell, which belongs to a standard C language library. Its main function is to send a standard output according to the format, fomatting the past arguments and turning them into the arguments os a charracter string. For this project, the main function will be used as _printf to diffrentiate it from the original printf.
+This project is about to run a simple shell, which belongs to a standard C language library. Simple Shell is an sh-compatible command language interpreter that executes commands read from the standard input or from a file.
 ```
-linkjavier@Javier-ThinkPad-E470:~/Holberton/simple_shell$ ./hsh 
+user@Lenovo-ThinkPad-E470:~/Holberton/simple_shell$ ./hsh 
 $ 
-
 ```
 ##How to use it 🔧
 Firts you have to add the holberton library. "shell.h"
