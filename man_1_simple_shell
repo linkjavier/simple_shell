@@ -1,71 +1,145 @@
-.TH man 3 "14 April 2020" "simple_shell man page"
+.TH man 1 "20 April 2020" "" "1.0 simple_shell man page"
 .SH NAME
 .B simple_shell
-- formatted output conversion
+- Simple Shell
 .SH SYNOPSIS
-.B #include "shell.h"
-.B int _printf(const char *format, ...);(simple_shell)
+.B ./hsh
+[command] [options]
 .SH DESCRIPTION
-The function simple_shell() produce output accord
-.SH FORMAT
+Interpreter that executes commands read from the standard input or from a file.
+.br
+
+Shell is a program that takes commands from the keyboard and gives them to the operating system to perform.
+
+.B Overview
+
+This simple shell is a simplification of a command interpreter, similar to
+.B bash.
 .TP
-%i
- integer number
-.TP
-%d
- integer number, the same as %i
-.TP
-%c
- character
-.TP
-%s
- string - prints (null) on null string
-.TP
-%r
- reverse string
-.TP
-%R
- rot13'ed string
-.SH Return value
-Returns the number of characters printed.......
-.SH Example
-.PP
-.RS
-.BR " #include ''shell.h'' "
-.br
-.BR " int main(void)"
-.br
-.BR " {"
-.br
-.BR " 	int age = 25;"
-.br
-.BR "	char letter = 'J';"
-.br
-.BR "	char *p = "OSCAR";"
-.br
-.BR "	_printf("Hello World"); "
-.br
-.BR "	_printf("My name beging with %c", letter); "
-.br
-.BR "	_printf("Your name is %s", p); "
-.br
-.BR "	_printf("I am %d years old", age); "
-.br
-.BR "	_printf("you are %i years", age); "
-.br
-.BR "   _printf("%R", p); "
-.br
-.BR "   _printf("%r", p); "
-.br
-.BR " }"
-.br
-.PP
-.SH Format of the format string
+ Command [option]...	ls -la
 .SH OPTIONS
-.B Not yet.
+Simple Shell
+operates in both
+.I interactive
+and
+.I non-interactive
+mode. The user may initiate
+.B simple shell
+and begin working or initate
+.B simple shell
+using commands meant to be run by the program.
+.SH ARGUMENTS
+The first argument, argument 0 is understood to be the command to be run by
+.B simple shell
+and arguments following as modifier or options.
+
+.B Return value
+
+The return value of a simple command is its exit status. returns various values depending on the success of the program execution or if an error occurred.
+
+.B Example
+.PP
+
+$./hsh
+
+$ touch Hello.txt
+
+$ ls
+
+.RS 3
+firts.txt
+.TB
+Hello.txt
+.TB
+second.txt
+.RE
+$ |
+
+.RS +4
+[$ ./hsh
+.RE
+.RS +4
+[$ /bin/ls
+.RE
+.RS +4
+hsh firts.txt hello.tx second.txt
+.RE
+.RS +4
+$
+.RE
+.RS +4
+[$ exit
+.RE
+.RS +4
+$
+
+.RE
+.B Run pwd command:
+.RS +4
+[$ pwd
+.RE
+.RS +4
+/home/vagrant/simple_shell
+.RE
+
+.RE
+.B Run exit command:
+.RS +4
+[$ exit
+.RE
+.RS +4
+vagrant@vagrant-ubuntu-trusty-64:~/simple_shell$
+.RE
+
+.B Non-interactive mode:
+
+.RS +4
+$ echo "/bin/ls" | ./hsh
+.RE
+.RS +4
+firts.txt hello.txt second.txt test_ls_2
+.RE
+.RS +4
+$
+.RE
+.RS +4
+$ cat test_ls_2
+.RE
+.RS +4
+/bin/ls
+.RE
+.RS +4
+/bin/ls
+.RE
+.RS +4
+$
+.RE
+.RS +4
+$ cat test_ls_2 | ./hsh
+.RE
+.RS +4
+hsh main.c shell.c test_ls_2
+.RE
+.RS +4
+hsh main.c shell.c test_ls_2
+.RE
+.RS +4
+$
+.PP
+
+.SH RESERVED KEY-WORDS
+
+.B ctrl + D:
+quits the program.
+
+.B ctrl + C:
+ends the process that is running.
+
 .SH SEE ALSO
-.I printf(3). putchar().
+.I sh(1)
+,
+.I bash(1)
 .SH BUGS
-No known bugs.
-.SH AUTHOR
+Not found.
+.SH AUTHORS
 Bryan Ortiz, Javier Charria
