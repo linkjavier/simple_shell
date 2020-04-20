@@ -10,29 +10,17 @@
 #include <sys/stat.h>
 #include <signal.h>
 #include <stdlib.h>
+#include <errno.h>
 
-/**
-  * struct directories - its used to find the PATH.
-  * @dir: directories
-  * @next: Pointer to next structure
-  *
-  * Description: directories structure
-  * for shell project.
-  */
-typedef struct directories
-{
-	char *dir;
-	struct directories *next;
-} dir_st;
-
-/*EOF function*/
-void eof_func(char c);
-void eof_1(char *phrase);
-char **put_args(char **arr, char *str);
+/*Signal fucntion*/
+void handle_signal(int sig);
+char **put_args(char **av, char *str);
+int _strcmp(char *s1, char *s2);
 char **sep_by_space(char *str);
-char **exec_func(char **all_tokens);
-int _strlen(char *str);
-char *_strcat(char *first, char *second);
 char *_strdup(const char *str);
+void free_dbl_arr(char **arr);
+int exec_func(char *phrase);
+void exect_prompt(void);
+int _strlen(char *str);
 
 #endif
