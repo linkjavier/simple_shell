@@ -1,22 +1,21 @@
 #include "shell.h"
 /**
-  * exec_func - Separates line into tokens and executes exceve with flags.
-  * @all_tokens: Double pointer. 2D Array
-  * Return: Return (0)
- **/
-char **exec_func(char **all_tokens)
+ * exec_func - Receive the input and start the process to execute the command.
+ * @phrase: is the input received from the stdin.
+ * Return: 0 on success.
+ */
+int exec_func(char *phrase)
 {
-	int found;
-	struct stat st;
+	char **all_tokens = NULL;
+	int i;
 
-	found = stat(all_tokens[0], &st);
-	if (found != 0)
-	{
-		perror("Error");
-		return (0);
-	}
+	all_tokens = sep_by_space(phrase);
 
 	execve(all_tokens[0], all_tokens, NULL);
-
-	return (0);
+	perror("Error");
+	for (i = 0; all_tokens[0] != NULL; i++)
+		free(all_tokens[i]);
+	free(all_tokens);
+	fflush(stdin);
+	_exit(127);
 }
