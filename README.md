@@ -8,7 +8,7 @@ user@Lenovo-ThinkPad-E470:~/Holberton/simple_shell$ ./hsh
 $ 
 ```
 ## How to use it 🔧
-Firts you have to add the holberton library. "shell.h"
+Firts you have to clone this repository.
 
 This library contains all the prototypes functions that you will need to execute the simple_shell function
 
@@ -39,6 +39,6 @@ $
 ## Development environment 🛠️
 This project has been tested on Ubuntu 14.06.6 LTS
 
-##Authors✒️
+## Authors✒️
 * Bryan Ortiz - student at Holberton School
 * Javier Charria - student at Holberton School
